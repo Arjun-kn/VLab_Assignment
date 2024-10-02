@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chemical Supplies Management</title>
+    <link rel="stylesheet" href="grid.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+  </head>
+  <body>
+    <div class="container-fluid">
+  
+      <div class="d-flex flex-row justify-content-between mt-3">
+        <h4 class="mainHeading">Chemical supplies</h4>
+        <div class="toolbar">
+          <i class="bi bi-plus-circle addIcon" onclick="addEditableRow()"></i>
+          <i class="bi bi-arrow-up upIcon" onclick="moveRowUp()"> </i>
+          <i class="bi bi-arrow-down" onclick="moveRowDown()"></i>
+          <i class="bi bi-trash deleteIcon" onclick="deleteRow()"></i>
+          <i class="bi bi-arrow-clockwise addIcon" onclick="refreshData()"></i>
+          <i class="bi bi-floppy addIcon" onclick="saveData()"></i>
+        </div>
+      </div>
+
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover" id="chemicalTable"  >
+          <thead class="custom-height">
+            <tr>
+              <th><input type="checkbox" checked /></th>
+              <th onclick="sortTable(0, this)"></th>
+              <th>
+                Chemical Name <span onclick="sortTable(1, this)">&#x2195;</span>
+              </th>
+              <th>Vendor <span onclick="sortTable(2, this)">&#x2195;</span></th>
+              <th>
+                Density <span onclick="sortTable(3, this)">&#x2195;</span><br />
+                <span class="unit">(g/m³)</span>
+              </th>
+              <th>
+                Viscosity <span onclick="sortTable(4, this)">&#x2195;</span
+                ><br />
+                <span class="unit">(m²/s)</span>
+              </th>
+              <th>
+                Packaging <span onclick="sortTable(5, this)">&#x2195;</span>
+              </th>
+              <th>
+                Pack Size <span onclick="sortTable(6, this)">&#x2195;</span>
+              </th>
+              <th>Unit <span onclick="sortTable(7, this)">&#x2195;</span></th>
+              <th>
+                Quantity <span onclick="sortTable(8, this)">&#x2195;</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+           
+          </tbody>
+        </table>
+      </div>
+
+      <div id="errorMessages" class="error"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="grid.js"></script>
+  </body>
+</html>
